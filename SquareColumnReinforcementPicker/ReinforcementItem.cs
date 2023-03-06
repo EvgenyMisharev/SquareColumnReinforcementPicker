@@ -6,7 +6,6 @@
 
         public RebarItem FaceBarsItem { get; set; }
         public int FaceBarsCnt { get; set; }
-        public double Fitness { get; set; }
 
         public ReinforcementItem(RebarItem angleBarsItem, RebarItem faceBarsItem, int faceBarsCnt)
         {
