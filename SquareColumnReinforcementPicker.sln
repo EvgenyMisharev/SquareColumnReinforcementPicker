@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquareColumnReinforcementPicker", "SquareColumnReinforcementPicker\SquareColumnReinforcementPicker.csproj", "{EEDE7BBB-C856-4C4F-AA80-89CBF2509C74}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		R2019|Any CPU = R2019|Any CPU
+		R2020|Any CPU = R2020|Any CPU
+		R2021|Any CPU = R2021|Any CPU
+		R2022|Any CPU = R2022|Any CPU
+		R2023|Any CPU = R2023|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EEDE7BBB-C856-4C4F-AA80-89CBF2509C74}.R2019|Any CPU.ActiveCfg = R2019|Any CPU
+		{EEDE7BBB-C856-4C4F-AA80-89CBF2509C74}.R2019|Any CPU.Build.0 = R2019|Any CPU
+		{EEDE7BBB-C856-4C4F-AA80-89CBF2509C74}.R2020|Any CPU.ActiveCfg = R2020|Any CPU
+		{EEDE7BBB-C856-4C4F-AA80-89CBF2509C74}.R2020|Any CPU.Build.0 = R2020|Any CPU
+		{EEDE7BBB-C856-4C4F-AA80-89CBF2509C74}.R2021|Any CPU.ActiveCfg = R2021|Any CPU
+		{EEDE7BBB-C856-4C4F-AA80-89CBF2509C74}.R2021|Any CPU.Build.0 = R2021|Any CPU
+		{EEDE7BBB-C856-4C4F-AA80-89CBF2509C74}.R2022|Any CPU.ActiveCfg = R2022|Any CPU
+		{EEDE7BBB-C856-4C4F-AA80-89CBF2509C74}.R2022|Any CPU.Build.0 = R2022|Any CPU
+		{EEDE7BBB-C856-4C4F-AA80-89CBF2509C74}.R2023|Any CPU.ActiveCfg = R2023|Any CPU
+		{EEDE7BBB-C856-4C4F-AA80-89CBF2509C74}.R2023|Any CPU.Build.0 = R2023|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FAD02BBF-2E27-45CB-AC4D-669FC39CA7F0}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,89 @@
+﻿<Window x:Class="SquareColumnReinforcementPicker.SquareColumnReinforcementPickerWPF"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SquareColumnReinforcementPicker"
+             mc:Ignorable="d" 
+             Title='Проект "Олег"' Height="620" Width="470" 
+             MinHeight="620" MinWidth="470" MaxHeight="620" MaxWidth="470"
+             WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen" KeyDown="SquareColumnReinforcementPickerWPF_KeyDown">
+    <Grid>
+        <Label x:Name="label_Ft" Content="Требуемая максимальная площадь армирования по грани:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="350" Height="26" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="textBox_FtText" HorizontalAlignment="Left" Height="26" Margin="360,10,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="label_FtSM" Content="см2" HorizontalAlignment="Left" Margin="415,10,0,0" VerticalAlignment="Top" Width="37" Height="26" VerticalContentAlignment="Center"/>
+
+        <Label x:Name="label_СolumnSection" Content="Размер грани колонны:" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Width="350" Height="26" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="textBox_ColumnSectionText" HorizontalAlignment="Left" Height="26" Margin="360,45,0,0" TextWrapping="Wrap" Text="400" VerticalAlignment="Top" Width="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="label_textBox_ColumnSectionMM" Content="мм" HorizontalAlignment="Left" Margin="415,45,0,0" VerticalAlignment="Top" Width="37" Height="26" VerticalContentAlignment="Center"/>
+
+        <Label x:Name="label_CoverLayer" Content="Размер защитного слоя:" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Width="350" Height="26" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="textBox_CoverLayerText" HorizontalAlignment="Left" Height="26" Margin="360,80,0,0" TextWrapping="Wrap" Text="25" VerticalAlignment="Top" Width="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="label_textBox_CoverLayerMM" Content="мм" HorizontalAlignment="Left" Margin="415,80,0,0" VerticalAlignment="Top" Width="37" Height="26" VerticalContentAlignment="Center"/>
+
+        <GroupBox x:Name="groupBox_PreferredBarsCnt" Header="Предпочтительное кол-во стержней по грани:" Height="60" Margin="10,115,10,0" VerticalAlignment="Top">
+            <Grid Margin="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150*"/>
+                    <ColumnDefinition Width="150*"/>
+                    <ColumnDefinition Width="150*"/>
+                    <ColumnDefinition Width="150*"/>
+                </Grid.ColumnDefinitions>
+                <RadioButton x:Name="rbt_2" Content="2" Margin="30,0,0,0" IsChecked="True" HorizontalAlignment="Left" VerticalContentAlignment="Center" Padding="5,0,0,0" VerticalAlignment="Center"/>
+                <RadioButton x:Name="rbt_3" Content="3" Grid.Column="1" Margin="0,0,30,0" HorizontalAlignment="Right" VerticalContentAlignment="Center" Padding="5,0,0,0" VerticalAlignment="Center"/>
+                <RadioButton x:Name="rbt_4" Content="4" Grid.Column="2" Margin="0,0,30,0" HorizontalAlignment="Right" VerticalContentAlignment="Center" Padding="5,0,0,0" VerticalAlignment="Center"/>
+                <RadioButton x:Name="rbt_5" Content="5" Grid.Column="4" Margin="0,0,30,0" HorizontalAlignment="Right" VerticalContentAlignment="Center" Padding="5,0,0,0" VerticalAlignment="Center"/>
+            </Grid>
+        </GroupBox>
+
+        <Button x:Name="button_Calculate" Content="Вычислить" HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top" Width="442" Height="26" Click="button_Calculate_Click"/>
+
+        <!--Результат подбора В1-->
+        <Label x:Name="label_V1" Content='Вариант 1 "Рекомендованные значения по массе"' HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top" Width="442" Height="26" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        <Label x:Name="label_V1_AngleBarsItemDiam" Content="Диаметр угловых стержней" HorizontalAlignment="Left" Margin="10,245,0,0" VerticalAlignment="Top" Width="350" Height="26" VerticalContentAlignment="Center"/>
+        <Label x:Name="label_V1_AngleBarsItemDiamText" Content="" HorizontalAlignment="Left" Margin="360,245,0,0" VerticalAlignment="Top" Width="50" Height="26" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="label_V1_AngleBarsItemDiamMM" Content="мм" HorizontalAlignment="Left" Margin="415,245,0,0" VerticalAlignment="Top" Width="37" Height="26" VerticalContentAlignment="Center"/>
+
+        <Label x:Name="label_V1_FaceBarsCnt" Content="Количество дополнительных стержней по грани" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top" Width="350" Height="26" VerticalContentAlignment="Center"/>
+        <Label x:Name="label_V1_FaceBarsCntText" Content="" HorizontalAlignment="Left" Margin="360,270,0,0" VerticalAlignment="Top" Width="50" Height="26" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="label_V1_FaceBarsCntCNT" Content="шт" HorizontalAlignment="Left" Margin="415,270,0,0" VerticalAlignment="Top" Width="37" Height="26" VerticalContentAlignment="Center"/>
+
+        <Label x:Name="label_V1_FaceBarsDiam" Content="Диаметр дополнительных стержней по грани" HorizontalAlignment="Left" Margin="10,295,0,0" VerticalAlignment="Top" Width="350" Height="26" VerticalContentAlignment="Center"/>
+        <Label x:Name="label_V1_FaceBarsDiamText" Content="" HorizontalAlignment="Left" Margin="360,295,0,0" VerticalAlignment="Top" Width="50" Height="26" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="label_V1_FaceBarsDiamMM" Content="мм" HorizontalAlignment="Left" Margin="415,295,0,0" VerticalAlignment="Top" Width="37" Height="26" VerticalContentAlignment="Center"/>
+
+        <Label x:Name="label_V1_Fr" Content="Общая площадь сечения арматуры по грани" HorizontalAlignment="Left" Margin="10,320,0,0" VerticalAlignment="Top" Width="350" Height="26" VerticalContentAlignment="Center"/>
+        <Label x:Name="label_V1_FrText" Content="" HorizontalAlignment="Left" Margin="360,320,0,0" VerticalAlignment="Top" Width="50" Height="26" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="label_V1_FrMM" Content="см2" HorizontalAlignment="Left" Margin="415,320,0,0" VerticalAlignment="Top" Width="37" Height="26" VerticalContentAlignment="Center"/>
+
+        <Label x:Name="label_V1_Mr" Content="Общая масса арматуры в сечении на 1 метр колонны" HorizontalAlignment="Left" Margin="10,345,0,0" VerticalAlignment="Top" Width="350" Height="26" VerticalContentAlignment="Center"/>
+        <Label x:Name="label_V1_MrText" Content="" HorizontalAlignment="Left" Margin="360,345,0,0" VerticalAlignment="Top" Width="50" Height="26" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+        <Label x:Name="label_V1_MrKG" Content="кг" HorizontalAlignment="Left" Margin="415,345,0,0" VerticalAlignment="Top" Width="37" Height="26" VerticalContentAlignment="Center"/>
+
+        <!--Результат подбора В2-->
+        <Label x:Name="label_V2" Content='Вариант 2 "Рекомендованные значения по массе и кол-ву стержней"' HorizontalAlignment="Left" Margin="10,375,0,0" VerticalAlignment="Top" Width="442" Height="26" VerticalContentAlignment="Center" FontWeight="Bold"/>
+
+        <Label x:Name="label_V2_AngleBarsItemDiam" Content="Диаметр угловых стержней" HorizontalAlignment="Left" Margin="10,400,0,0" VerticalAlignment="Top" Width="350" Height="26" VerticalContentAlignment="Center"/>
+        <Label x:Name="label_V2_AngleBarsItemDiamText" Content="" HorizontalAlignment="Left" Margin="360,400,0,0" VerticalAlignment="Top" Width="50" Height="26" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="label_V2_AngleBarsItemDiamMM" Content="мм" HorizontalAlignment="Left" Margin="415,400,0,0" VerticalAlignment="Top" Width="37" Height="26" VerticalContentAlignment="Center"/>
+
+        <Label x:Name="label_V2_FaceBarsCnt" Content="Количество дополнительных стержней по грани" HorizontalAlignment="Left" Margin="10,426,0,0" VerticalAlignment="Top" Width="350" Height="26" VerticalContentAlignment="Center"/>
+        <Label x:Name="label_V2_FaceBarsCntText" Content="" HorizontalAlignment="Left" Margin="360,425,0,0" VerticalAlignment="Top" Width="50" Height="26" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="label_V2_FaceBarsCntCNT" Content="шт" HorizontalAlignment="Left" Margin="415,425,0,0" VerticalAlignment="Top" Width="37" Height="26" VerticalContentAlignment="Center"/>
+
+        <Label x:Name="label_V2_FaceBarsDiam" Content="Диаметр дополнительных стержней по грани" HorizontalAlignment="Left" Margin="10,450,0,0" VerticalAlignment="Top" Width="350" Height="26" VerticalContentAlignment="Center"/>
+        <Label x:Name="label_V2_FaceBarsDiamText" Content="" HorizontalAlignment="Left" Margin="360,450,0,0" VerticalAlignment="Top" Width="50" Height="26" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="label_V2_FaceBarsDiamMM" Content="мм" HorizontalAlignment="Left" Margin="415,450,0,0" VerticalAlignment="Top" Width="37" Height="26" VerticalContentAlignment="Center"/>
+
+        <Label x:Name="label_V2_Fr" Content="Общая площадь сечения арматуры по грани" HorizontalAlignment="Left" Margin="10,475,0,0" VerticalAlignment="Top" Width="350" Height="26" VerticalContentAlignment="Center"/>
+        <Label x:Name="label_V2_FrText" Content="" HorizontalAlignment="Left" Margin="360,475,0,0" VerticalAlignment="Top" Width="50" Height="26" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="label_V2_FrMM" Content="см2" HorizontalAlignment="Left" Margin="415,475,0,0" VerticalAlignment="Top" Width="37" Height="26" VerticalContentAlignment="Center"/>
+
+        <Label x:Name="label_V2_Mr" Content="Общая масса арматуры в сечении на 1 метр колонны" HorizontalAlignment="Left" Margin="10,500,0,0" VerticalAlignment="Top" Width="350" Height="26" VerticalContentAlignment="Center"/>
+        <Label x:Name="label_V2_MrText" Content="" HorizontalAlignment="Left" Margin="360,500,0,0" VerticalAlignment="Top" Width="50" Height="26" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+        <Label x:Name="label_V2_MrKG" Content="кг" HorizontalAlignment="Left" Margin="415,500,0,0" VerticalAlignment="Top" Width="37" Height="26" VerticalContentAlignment="Center"/>
+
+        <Button x:Name="btn_Ok" Content="Ок" HorizontalAlignment="Right" Margin="0,0,125,10" VerticalAlignment="Bottom" Width="100" Height="25" Click="btn_Ok_Click"/>
+        <Button x:Name="btn_Cancel" Content="Отмена" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="100" Height="25" Click="btn_Cancel_Click"/>
+    </Grid>
+</Window>
